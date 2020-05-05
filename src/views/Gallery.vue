@@ -2,7 +2,7 @@
   <div>
     <v-container v-if="itemList">
       <v-row style="display: flex; flex-wrap: wrap;">
-        <v-layout v-for="item in itemList" style="width: 25%" pt-5>
+        <v-layout v-for="item in itemList" class="card_layout" pt-5>
           <v-card @mouseover="activeItem = item"
                   @mouseleave="activeItem=null"
                   width="90%">
@@ -106,6 +106,17 @@
 </script>
 
 <style>
+  @media only screen and (max-width:  576px) {
+    .card_layout{
+     width: 90%;
+      margin-left: 10%;
+    }
+  }
+  @media only screen and (min-width:  577px) {
+    .card_layout{
+      width: 25%;
+    }
+  }
   .selectedImage {
     opacity: 0.5;
   }

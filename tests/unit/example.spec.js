@@ -8,6 +8,7 @@ localVue.use(Vuex);
 describe('Gallery', () => {
   let store;
   let actions;
+
   const item1 = {
     "id": 13,
     "title": "Rome",
@@ -16,13 +17,13 @@ describe('Gallery', () => {
     "isSelected": false
   };
 
-  const item2 ={
-      "id": 14,
-      "title": "Tokyo",
-      "img": "city-14.jpg",
-      "date": "2019-02-52 24:23:52",
-      "isSelected": false
-    }
+  const item2 = {
+    "id": 14,
+    "title": "Tokyo",
+    "img": "city-14.jpg",
+    "date": "2019-02-52 24:23:52",
+    "isSelected": false
+  };
 
   beforeEach(() => {
     actions = {actionClick: jest.fn(), actionInput: jest.fn()};
