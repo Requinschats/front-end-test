@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="inspire">
     <v-app-bar
       app
       id="app_bar"
@@ -23,7 +23,7 @@
       </v-container>
       <v-spacer></v-spacer>
     </v-app-bar>
-    <v-content>
+    <v-content id="body">
       <router-view/>
     </v-content>
   </v-app>
@@ -34,6 +34,10 @@
   export default {
     name: 'App',
     data: () => ({}),
+    created () {
+      this.$vuetify.theme.dark = true
+    },
+
   };
 </script>
 
