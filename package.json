@@ -13,9 +13,10 @@
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuetify": "^2.2.26",
-    "vuex": "^3.0.1"
+    "vuex": "^3.3.0"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
     "@vue/cli-plugin-babel": "^3.10.0",
     "@vue/cli-plugin-eslint": "^3.10.0",
     "@vue/cli-plugin-unit-jest": "^3.10.0",

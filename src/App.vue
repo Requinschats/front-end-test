@@ -9,16 +9,16 @@
       <v-spacer></v-spacer>
       <v-container justify="center" style="width: 230px;">
         <v-row>
-        <v-btn text>
-          Home
-        </v-btn>
-        <v-spacer></v-spacer>
-        <v-btn text>
-          Gallery
-        </v-btn>
+          <v-btn text to="/">
+            Home
+          </v-btn>
+          <v-spacer></v-spacer>
+          <v-btn text to="/gallery">
+            Gallery
+          </v-btn>
         </v-row>
         <v-row style="margin-top: 1vh" justify="center">
-          <span style="font-size: 15px; text-align: center">There are 20 items (0 selected)</span>
+          <span style="font-size: 15px; text-align: center">There are {{getItemListCount}} items (19 selected)</span>
         </v-row>
       </v-container>
       <v-spacer></v-spacer>
@@ -33,16 +33,30 @@
 
   export default {
     name: 'App',
-    data: () => ({}),
-    created () {
-      this.$vuetify.theme.dark = true
+    data: () => ({
+      itemList: null
+    }),
+    created() {
+      this.$vuetify.theme.dark = true;
+      this.updateItemList();
     },
+    methods: {
+      updateItemList() {
+        const itemlistJson = require('../public/json/item-list.json');
+        this.$store.commit('setItemList', itemlistJson.items);
+      },
+    },
+    computed: {
+      getItemListCount() {
+        return this.$store.state.itemList.length;
+      }
+    }
 
   };
 </script>
 
 <style>
-  html * {
+  body {
     font-family: 'Open Sans', sans-serif !important;
   }
 
