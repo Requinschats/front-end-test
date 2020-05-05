@@ -4,7 +4,7 @@
       app
       id="app_bar"
       fixed
-      prominent
+      height="90px"
       dark>
       <v-spacer></v-spacer>
       <v-container justify="center" style="width: 230px;">
@@ -18,7 +18,8 @@
           </v-btn>
         </v-row>
         <v-row style="margin-top: 1vh" justify="center">
-          <span style="font-size: 15px; text-align: center">There are {{getItemListCount}} items (19 selected)</span>
+          <span style="font-size: 15px; text-align: center">There are {{getItemListCount}} items
+                                                            ({{getSelectedItemsCount}} selected)</span>
         </v-row>
       </v-container>
       <v-spacer></v-spacer>
@@ -49,6 +50,10 @@
     computed: {
       getItemListCount() {
         return this.$store.state.itemList.length;
+      },
+
+      getSelectedItemsCount() {
+        return this.$store.state.selectedItems.length;
       }
     }
 
