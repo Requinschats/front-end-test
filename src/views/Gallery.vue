@@ -1,24 +1,51 @@
 <template>
-    <div class="gallery">
-        <h1>Gallery</h1>
-
-        <h2>There are **** items</h2>
-
-        <div>
-            <h3>Item Concept</h3>
-            <img src="/img/item-sample.png"
-                alt="Item Concept"
-                width="962"
-                height="544">
-            <p>(delete this part)</p>
-        </div>
-    </div>
+  <v-container v-if="itemList">
+    <v-row style="display: flex; flex-wrap: wrap;">
+      <v-layout v-for="item in itemList" style="width: 25%" pt-5>
+      <v-card width="90%">
+        <v-img
+          :src="getItemImagePath(item.img)"
+          class="white--text"
+          aspect-ratio="1.77777777778"
+          min-width="110%">
+          <v-container style="margin-top: -14px">
+            <v-row style="background: rgba(0,0,0,0.49)" justify="center">
+                <span class="subtitle-1">{{item.title}}</span>
+            </v-row>
+          </v-container>
+          <v-container>
+            <v-row style="background: rgba(0,0,0,0.49)" justify="center" align="end">
+              tges
+            </v-row>
+          </v-container>
+        </v-img>
+      </v-card>
+      </v-layout>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
-export default {
+  const ITEM_LIST_DIRECTORY_PATH = '../../public/json/item-list.json';
+  export default {
     name: 'Gallery',
-};
+    data: () => ({
+      itemList: null
+    }),
+    created: function () {
+      this.updateItemList();
+    },
+    methods: {
+      updateItemList() {
+        const itemlistJson = require('../../public/json/item-list.json');
+        this.itemList = itemlistJson.items;
+        console.log()
+      },
+      getItemImagePath(imageName) {
+        return require('../../public/img/' + imageName);
+      }
+    }
+  }
 </script>
 
 <style lang="scss" scoped>

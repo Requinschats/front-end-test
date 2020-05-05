@@ -132,13 +132,6 @@
             "img": "city-19.jpg",
             "date": "2019-02-52 24:23:52",
             "isSelected": false
-        },
-        {
-            "id": 20,
-            "title": "Washington",
-            "img": "city-20.jpg",
-            "date": "2019-02-52 24:23:52",
-            "isSelected": false
         }
 
     ]

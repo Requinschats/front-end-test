@@ -1,22 +1,48 @@
 <template>
-    <div class="app">
-        <router-link to="/">Home</router-link>
-
-        <router-view/>
-    </div>
+  <v-app>
+    <v-app-bar
+      app
+      id="app_bar"
+      fixed
+      prominent
+      dark>
+      <v-spacer></v-spacer>
+      <v-container justify="center" style="width: 230px;">
+        <v-row>
+        <v-btn text>
+          Home
+        </v-btn>
+        <v-spacer></v-spacer>
+        <v-btn text>
+          Gallery
+        </v-btn>
+        </v-row>
+        <v-row style="margin-top: 1vh" justify="center">
+          <span style="font-size: 15px; text-align: center">There are 20 items (0 selected)</span>
+        </v-row>
+      </v-container>
+      <v-spacer></v-spacer>
+    </v-app-bar>
+    <v-content>
+      <router-view/>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-export default {
+
+  export default {
     name: 'App',
-};
+    data: () => ({}),
+  };
 </script>
 
-<style lang="scss">
-body {
-    color: #2c3e50;
-    text-align: center;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+<style>
+  html * {
+    font-family: 'Open Sans', sans-serif !important;
+  }
+
+  #app_bar {
+    background: linear-gradient(45deg, #c94b4b, #4b134f);
+  }
 </style>
