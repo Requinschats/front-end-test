@@ -5,11 +5,15 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
-    itemList: null
+    itemList: null,
+    selectedItems: []
   },
   mutations: {
     setItemList(state, itemList) {
       state.itemList = itemList;
+    },
+    setSelectedItems(state, selectedItems) {
+      state.selectedItems = selectedItems;
     }
   },
 });

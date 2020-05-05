@@ -34,7 +34,7 @@
   export default {
     name: 'App',
     data: () => ({
-      itemList: null
+      itemList: null,
     }),
     created() {
       this.$vuetify.theme.dark = true;
